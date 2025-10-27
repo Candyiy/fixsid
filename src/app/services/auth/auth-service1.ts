@@ -48,7 +48,6 @@ export class AuthService1 {
     onAuthStateChanged(this.auth,(use)=>{
       this.currentUser=use;
       this.cargarDatosUsuarioPorEmail(use?.email!);
-      console.log('Estado de autenticacion cambiado:',use +'zzzzzzzzzzzzzzzzzzzz');
     });
 
   }
@@ -73,24 +72,7 @@ export class AuthService1 {
 
   // Buscar en Realtime Database por email
   private async cargarDatosUsuarioPorEmail(email: string) {
-    /*try {
-      const usuariosRef = ref(this.db, 'users');
-      const snapshot = await get(usuariosRef);
-
-      if (snapshot.exists()) {
-        const usuarios = snapshot.val();
-        const userFound = Object.values(usuarios).find(
-          (u: any) => u.email === email
-        );
-        this.userData.set(userFound || null);
-      } else {
-        this.userData.set(null);
-      }
-    } catch (error) {
-      console.error('Error cargando usuario:', error);
-      this.userData.set(null);
-    }*/
-
+    
     try {
       const usuariosRef = ref(this.db, 'users');
       const snapshot = await get(usuariosRef);
