@@ -19,11 +19,7 @@ export class Usuario {
   dialogVisible =false;
   itemSelect = signal<any>(null);
   private fireDb = inject(Firebase);
-  ////////////////////////////
-  ///////////////////////////
   private path = PATHFireBase.Usuarios;
-  ///////////////////////////
-  ///////////////////////////  
   error = signal<string|undefined>('');
     usuariosResource = this.fireDb.createResource(this.path);
 
@@ -40,13 +36,7 @@ export class Usuario {
 
   usuarios = computed(()=>{
       let  datos = this.usuariosResource.value()?.data;
-      //this.error.set(this.usuariosResource.value()?.error);
-      //...... filtrado/ordenar
       
-      //###########################
-      // UsuarioModel cambiar por el modelo que sea
-      // como AgenteModel
-      // conste tiene su libreria su modelo propio esta en la carpeta models
       return datos as UsuarioModel[];
     });
     constructor(){
@@ -76,25 +66,4 @@ export class Usuario {
       this.onClose();
     }
 
-/*
-  db=inject(Database);
-  dbFire = inject(Firebase);
-  private traer=getDatabase();
-  volverAgente(datos:any){
-    const data_ = {
-      name:datos.name,
-      email:datos.email,
-      ci:datos.ci,
-      password:datos.password,
-      rol:'agente'
-    };
-    update(ref(this.traer, '/users/' + datos.id), data_)
-    .then(() => {
-      console.log(' Datos actualizados correctamente');
-    })
-    .catch((error) => {
-      console.error(' Error al actualizar:', error);
-    });
-  }
-  */
 }
