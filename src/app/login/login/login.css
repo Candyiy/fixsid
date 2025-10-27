@@ -1,0 +1,26 @@
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.imagen {
+  width: 400px;
+  height: 400px;
+  background-image: url('img/icone.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  opacity: 0.2; /* 0 = completamente transparente, 1 = opaco */
+}
+

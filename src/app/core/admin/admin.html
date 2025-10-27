@@ -1,0 +1,40 @@
+
+
+
+<div class="card flex justify-center gap-2">
+  <button (click)="onAdd()">Añadir admin</button>
+</div>
+
+
+<p style="text-align: center;color: white;font-size: 25px;">Lista de admin</p>
+
+@for(item of usuariosResource.value()?.data; track item.id) {
+  @if (item.rol == 'admin') {
+    <div class="admin-item" style="color: white;">
+      {{item.id}}<br>
+      {{item.name}}<br>
+      {{item.email}}<br>
+      {{item.password}}<br>
+      {{item.rol}}<br>
+      <button (click)="onEditar(item)">✏️</button>
+      <button (click)="onEliminar($event, item.id)">🗑️</button>
+    </div>
+  }
+}
+
+@if(modal()){
+<div  class="modal-overlay">
+  <button (click)="onClose()">X</button>
+  @if (formVisible) {
+    <div class="" style="background-color: antiquewhite;border-radius: 5px;">
+    <app-formadmin [data]="itemSelect()" (salir)="onClose()"> </app-formadmin>
+    </div>
+  }
+  @if (dialogVisible) {
+    
+    <app-dialog texto="estas seguro de borrar" 
+    (confirm)="confirmacion($event)">  </app-dialog> 
+  
+  }
+</div>
+}

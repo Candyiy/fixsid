@@ -1,0 +1,45 @@
+@if (usuarioActual()?.rol =='admin') {
+  <div class="card flex justify-center gap-2">
+    <button (click)="onAdd()">Añadir Eventos</button>
+  </div>
+}
+
+<p style="text-align:center; margin-top:30px;color: white; font-weight:bold; font-size:1.2rem;">Lista de Eventos</p>
+
+@for(item of usuariosResource.value()?.data; track item.id) {
+  <div class="event-item">
+    <div>
+      <strong>ID: {{item.id}}</strong> <br>
+      <strong>Nombre: {{item.name}}</strong> <br>
+      <strong>Descripción: {{item.descripcion}}</strong> <br>
+      <strong>Precio:</strong> {{item.precio}}<br>
+      <img [src]="item.foto" alt="{{item.name}}">
+    </div>
+
+    <div class="event-buttons">
+      <button (click)="verEvento(item)">Ver Evento</button>
+      @if (usuarioActual()?.rol == 'admin') {
+        <button (click)="onEditar(item)">✏️ Editar</button>
+        <button (click)="onEliminar($event, item.id)">🗑️ Eliminar</button>
+      }
+    </div>
+  </div>
+}
+
+
+@if(modal()){
+<div class="modal-overlay">
+  <button (click)="onClose()">X</button>
+  @if (formVisible) {
+    <div class="" style="background-color: antiquewhite;">
+    <app-formevento [data]="itemSelect()" (salir)="onClose()"> </app-formevento>
+    </div>
+  }
+  @if (dialogVisible) {
+    
+    <app-dialog texto="estas seguro de borrar" 
+    (confirm)="confirmacion($event)">  </app-dialog> 
+  
+  }
+</div>
+}

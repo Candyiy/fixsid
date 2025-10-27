@@ -1,0 +1,21 @@
+
+<div class="container">
+  
+  <form [formGroup]="datosFormGroup">
+
+  <label for="nombre">Nombre</label>
+  <input type="text" name="name" pInputText formControlName="name">
+
+  <label for="ci">Ci</label>
+  <input type="text" name="ci" pInputText formControlName="ci">
+  
+  <label for="email">Email</label>
+  <input type="text" name="email" pInputText formControlName="email">
+
+  <label for="password">Password</label>
+  <input type="text" name="password" pInputText formControlName="password">
+
+  <button (click)="registrar()">Registrar</button>
+
+  </form>
+</div>

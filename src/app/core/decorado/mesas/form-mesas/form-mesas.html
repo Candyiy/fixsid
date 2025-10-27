@@ -1,0 +1,26 @@
+<p>form-mesas works!</p>
+
+<div class="xd">
+  <div class="container">
+    <form action="" [formGroup]="datosFormGroup" >
+
+      <label for="marca">marca</label>
+      <input type="text" name="marca" pInputText formControlName="marca">
+      
+      <label for="material">material</label>
+      <input pInputText formControlName="material" type="text" name="material">
+
+      <label for="descripcion">descripcion</label>
+      <input type="text" name="descripcion" pInputText formControlName="descripcion">
+      
+      <label for="precio">precio</label>
+      <input type="text" name="precio" pInputText formControlName="precio">
+
+      <label for="foto">foto</label>
+      <input type="text" name="foto" pInputText formControlName="foto">
+      
+      <button [disabled]="datosFormGroup.invalid" (click)="guardar()">Guardar</button>
+    </form>
+    
+  </div>
+</div>

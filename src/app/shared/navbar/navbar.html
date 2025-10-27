@@ -1,0 +1,24 @@
+<ul>
+@for (item of navegacionFiltrada(); track item) {
+<nav class="navbar" >
+    <li >
+      <button [routerLink]="item.url">
+        <i >{{item.nombre}}</i> 
+      </button>
+    </li>
+</nav>
+}
+</ul>
+<!--
+<ul>
+@for (item of navegacion; track item) {
+<nav class="navbar" >
+    <li >
+      <button [routerLink]="item.url">
+        <i >{{item.nombre}}</i> 
+      </button>
+    </li>
+</nav>
+}
+</ul>
+-->

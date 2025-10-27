@@ -1,0 +1,32 @@
+<div class="todo">
+
+<div  class="container" >
+  
+  <nav class="navbar">
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">Logo</a>
+    <ul id="nav-mobile" class="nav-links">
+      <li><a href="#">Sass</a></li>
+      <li><a href="#">Components</a></li>
+      <li><a href="#">JavaScript</a></li>
+    </ul>
+  </div>
+</nav>
+
+  
+
+  <div class="row">
+    <div class="col s12">
+      <p><strong>ID:</strong> {{ userInfo()?.id }}</p>
+
+  </div>
+  <div class="row">
+    <div class="col s3" style="position:relative; top: -30px;left: -11.5px;">
+      <app-navbar></app-navbar>
+    </div>
+    <div class="col s9">
+      <router-outlet />
+    </div>
+  </div>
+</div>
+</div>

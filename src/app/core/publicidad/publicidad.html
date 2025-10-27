@@ -1,0 +1,37 @@
+
+<div class="btn-container">
+  <button class="btn-action" (click)="onAdd()">Añadir Publicidad</button>
+</div>
+
+<p style="font-size: 25px;color: white;text-align: center;">lista de Eventos</p>
+
+<div class="items-container">
+  @for(item of usuariosResource.value()?.data;track item.id){
+    <div class="item-card">
+      {{item.id}}<br>
+      {{item.name}}<br>
+      {{item.descripcion}}<br>
+      {{item.tiempoinicial}} - {{item.tiempofinal}}<br>
+      <img [src]="item.foto" alt="{{item.name}}"><br>
+      @if (usuarioActual()?.rol =='admin') {
+        <button class="btn-action" (click)="onEditar(item)">✏️</button>
+        <button class="btn-action" (click)="onEliminar($event,item.id)">🗑️</button>
+      }
+    </div>
+  }
+</div>
+
+@if(modal()){
+<div class="modal-overlay">
+  <button (click)="onClose()">X</button>
+  @if (formVisible) {
+    <app-formpublicidad [data]="itemSelect()" (salir)="onClose()"> </app-formpublicidad>
+  }
+  @if (dialogVisible) {
+    
+    <app-dialog texto="estas seguro de borrar" 
+    (confirm)="confirmacion($event)">  </app-dialog> 
+  
+  }
+</div>
+}

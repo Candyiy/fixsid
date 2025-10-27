@@ -1,0 +1,36 @@
+/* Contenedor del menú */
+.navbar {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column; /* apilar botones verticalmente */
+  gap: 10px;              /* espacio entre botones */
+  width: 300px;            /* ancho del navbar */
+  margin-top: 30px;
+}
+
+/* Elimina estilo de lista */
+.navbar li {
+  list-style: none;
+}
+
+/* Botones del menú ocupando todo el ancho */
+.navbar button {
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #fff;
+  transition: 0.3s;
+  width: 100%;      /* aquí es lo clave: ocupa todo el ancho */
+  text-align: left; /* opcional: alinea el texto a la izquierda */
+}
+
+.navbar button:hover {
+  background: rgba(255, 255, 255, 0.5);
+}

@@ -1,0 +1,136 @@
+/* Navbar general */
+.navbar {
+  width: 100%;
+  position: fixed; /* Fija en la parte superior */
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.15); /* semi-transparente */
+  backdrop-filter: blur(10px); /* efecto glass */
+  padding: 10px 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  z-index: 100;
+}
+
+/* Contenedor del navbar */
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.brand-logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+/* Menú */
+#nav-mobile {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#nav-mobile li a {
+  color: white;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+#nav-mobile li a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Responsive: oculta el menú en pantallas pequeñas */
+@media (max-width: 768px) {
+  #nav-mobile {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.todo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* centra horizontalmente */
+  justify-content: flex-start; /* alineación vertical al inicio */
+  min-height: 100vh;        /* para que ocupe toda la altura de la ventana */
+  padding: 20px;
+  box-sizing: border-box;
+      /* opcional: un fondo suave */
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;       /* límite ancho para que no se extienda demasiado */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Opcional: ajusta el nav para que quede centrado o con padding */
+.nav-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Ajusta la fila para que use todo el ancho disponible */
+.row {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Ajusta los cols para mejor distribución */
+.col.s3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.col.s9 {
+  flex: 0 0 75%;
+  max-width: 75%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+/* Para que el contenido dentro de las columnas no esté pegado */
+.col.s3, .col.s9 {
+  display: flex;
+  flex-direction: column;
+}

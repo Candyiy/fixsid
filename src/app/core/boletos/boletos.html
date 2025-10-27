@@ -1,0 +1,45 @@
+
+@if (usuarioActual()?.rol =='admin') {
+<div class="btn-container">
+  <button class="btn-action" (click)="onAdd()">Añadir Boletos</button>
+</div>
+
+}
+
+<p style="font-size: 25px;color: white;text-align: center;">lista de Boletos</p>
+
+<div class="productos-container">
+  @for(item of usuariosResource.value()?.data; track item.id) {
+    <div class="producto-card-mediana">
+      {{item.name}}<br>
+      {{item.descripcion}}<br>
+      {{item.precio}}<br>
+      <img [src]="item.foto" alt="{{item.name}}"><br>
+      <button class="btn-action" (click)="compradoBoleto(item)">Comprar</button>
+      @if(usuarioActual()?.rol == 'admin') {
+        <button class="btn-admin" (click)="onEditar(item)">✏️</button>
+        <button class="btn-admin" (click)="onEliminar($event, item.id)">🗑️</button>
+      }
+    </div>
+  }
+</div>
+
+
+
+
+@if(modal()){
+<div class="modal-overlay">
+  <button (click)="onClose()">X</button>
+  @if (formVisible) {
+    <div class="" style="background-color: bisque;border-radius: 5px;">
+    <app-formboletos [data]="itemSelect()" (salir)="onClose()"> </app-formboletos>
+    </div>
+  }
+  @if (dialogVisible) {
+    
+    <app-dialog texto="estas seguro de borrar" 
+    (confirm)="confirmacion($event)">  </app-dialog> 
+  
+  }
+</div>
+}

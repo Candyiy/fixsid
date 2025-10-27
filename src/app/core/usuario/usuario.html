@@ -1,0 +1,43 @@
+
+<div class="card flex justify-center gap-2">
+  <button (click)="onAdd()">Añadir usuario</button>
+</div>
+
+
+<p style="color: white;font-size: 25px;text-align: center;">lista de Usuario</p>
+
+@for(item of usuariosResource.value()?.data; track item.id) {
+  @if (item.rol == 'cliente') {
+    <div class="cliente-item" style="color: white;font-size: 18px;">
+      {{item.id}}<br>
+      {{item.name}}<br>
+      {{item.ci}}<br>
+      {{item.email}}<br>
+      {{item.password}}<br>
+      {{item.rol}}<br>
+      @if(item.rol == 'cliente'){
+        <button class="volver-agente">volver agente</button>
+      }
+      <button (click)="onEditar(item)">✏️</button>
+      <button (click)="onEliminar($event, item.id)">🗑️</button>
+    </div>
+  }
+}
+
+
+@if(modal()){
+<div class="modal-overlay">
+  <button (click)="onClose()">X</button>
+  @if (formVisible) {
+    <div class="" style="background-color: antiquewhite;border-radius: 10px;">
+    <app-formusuario [data]="itemSelect()" (salir)="onClose()"> </app-formusuario>
+    </div>
+  }
+  @if (dialogVisible) {
+    
+    <app-dialog texto="estas seguro de borrar" 
+    (confirm)="confirmacion($event)">  </app-dialog> 
+  
+  }
+</div>
+}

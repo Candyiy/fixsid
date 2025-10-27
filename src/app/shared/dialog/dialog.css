@@ -1,0 +1,62 @@
+/* Contenedor principal */
+.zz {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Texto dinámico */
+.texto-dinamico {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+/* Cambio de color al pasar el mouse */
+.texto-dinamico:hover {
+  color: #007bff;
+}
+
+/* Caja de decisiones */
+.decision-box {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Botones */
+.decision-buttons button {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  color: #fff;
+}
+
+/* Botón Sí */
+.btn-si {
+  background-color: #28a745;
+}
+
+.btn-si:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+/* Botón No */
+.btn-no {
+  background-color: #dc3545;
+}
+
+.btn-no:hover {
+  background-color: #c82333;
+  transform: translateY(-2px);
+}

@@ -1,0 +1,23 @@
+
+
+<div class="xd">
+  <div class="container">
+    <form action="" [formGroup]="datosFormGroup" >
+      
+      <label for="name">Nombre</label>
+      <input type="text" name="name" pInputText formControlName="name">
+      
+      <label for="descripcion">descripcion</label>
+      <input pInputText formControlName="descripcion" type="text" name="descripcion">
+
+      <label for="fecha">fecha</label>
+      <input type="text" name="fecha" pInputText formControlName="fecha">
+      
+      <label for="foto">foto</label>
+      <input type="text" name="foto" pInputText formControlName="foto">
+      
+      <button [disabled]="datosFormGroup.invalid" (click)="guardar()">Guardar</button>
+    </form>
+    
+  </div>
+</div>

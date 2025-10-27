@@ -1,0 +1,21 @@
+.info-usuario {
+  background: rgba(0, 0, 0, 0.4); /* fondo negro semitransparente */
+  backdrop-filter: blur(8px);      /* desenfoque del fondo detrás */
+  -webkit-backdrop-filter: blur(8px);
+  padding: 20px;
+  border-radius: 12px;
+  color: white;                    /* letras blancas */
+  max-width: 400px;
+  margin: 20px auto;               /* centra el bloque horizontalmente */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+}
+
+.bienvenido-text {
+  font-size: 3rem;       /* texto grande */
+  font-weight: bold;
+  margin-bottom: 20px;   /* espacio debajo */
+  letter-spacing: 2px;   /* espaciado entre letras */
+  color: #fff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7); /* brillo suave */
+}

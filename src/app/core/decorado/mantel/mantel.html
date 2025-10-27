@@ -1,0 +1,39 @@
+
+<div class="btn-container">
+  <button class="btn-action" (click)="onAdd()">Añadir Mantel</button>
+</div>
+
+
+<p style="border-radius: 5px;text-align: center;font-size: 25px;color: white;">lista de Manteles</p>
+
+<div class="producto-container">
+  @for(item of usuariosResource.value()?.data; track item.id){
+    <div class="producto-card">
+      {{item.marca}}<br>
+      {{item.color}}<br>
+      {{item.descripcion}}<br>
+      {{item.precio}}<br>
+      <img [src]="item.foto" alt="{{item.marca}}"><br>
+      <button (click)="onEditar(item)">✏️</button>
+      <button (click)="onEliminar($event,item.id)">🗑️</button>
+    </div>
+  }
+</div>
+
+
+@if(modal()){
+<div class="modal-overlay">
+  <button (click)="onClose()">X</button>
+  @if (formVisible) {
+    <div class="" style="background-color: aliceblue;border-radius: 5px;">
+    <app-form-mantel [data]="itemSelect()" (salir)="onClose()"> </app-form-mantel>
+    </div>
+  }
+  @if (dialogVisible) {
+    
+    <app-dialog texto="estas seguro de borrar" 
+    (confirm)="confirmacion($event)">  </app-dialog> 
+  
+  }
+</div>
+}

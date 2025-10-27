@@ -1,0 +1,27 @@
+
+<div class="container" style="position: relative; top:200px">
+<div class="row">
+<div class="col s6">
+  
+  <div class="imagen"></div>
+
+  <!--
+  <img src="https://ih1.redbubble.net/image.4435949274.3616/flat,750x,075,f-pad,750x1000,f8f8f8.u2.jpg" style="width: 400px;">-->
+</div>
+<div class="col s6">
+<button (click)="verSesion()">Login</button>
+<hr>
+<button (click)="verRegister()">Registrar</button>
+<br><br>
+@if(sesionActiva()){
+  <app-loginsesion></app-loginsesion>
+}
+
+@if(registerActiva()){
+  <app-loginregister></app-loginregister>
+}
+</div>
+
+</div>
+
+</div>

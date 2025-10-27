@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+
+body{
+  background-image: url(img/111.jpg);
+  background-repeat: no-repeat;         /* evita que se repita la imagen */
+  background-size: cover;               /* hace que la imagen cubra todo el body */
+  background-position: center;          /* centra la imagen */
+  background-attachment: fixed;  
+}

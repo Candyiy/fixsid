@@ -1,0 +1,225 @@
+
+.xdxd{
+  background-color: darkcyan;
+  width: 300px;
+  color: white;
+}
+
+.buscar{
+  background-color: #667eea;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  width: 200px;
+  height: 100px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+  padding: 1rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-container {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease;
+  position: relative;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 16px 16px 0 0;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.modal-close {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+.modal-body {
+  padding: 2rem;
+}
+
+.modal-footer {
+  padding: 1.5rem;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  background-color: #f8f9fa;
+  border-radius: 0 0 16px 16px;
+}
+
+.modal-footer .btn {
+  min-width: 100px;
+}
+
+/*CCCCCCCCCCCCCCCCCCCCCCCCCCCCCC*/
+.card {
+  background: rgba(255, 255, 255, 0.5); /* más transparente */
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 12px 16px;
+  max-width: 500px;
+  margin: 15px auto;
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.9rem;
+  backdrop-filter: blur(6px);          /* agrega desenfoque para mejorar legibilidad */
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.3); /* borde sutil */
+}
+
+.card, .event-item {
+  max-width: 340px;     /* menos ancho máximo para que no sea tan grande */
+  width: 90vw;          /* ancho relativo al viewport para adaptarse */
+  margin: 15px auto;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  padding: 12px 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.9rem;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+
+.card.flex {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+button {
+  background-color: rgba(0, 123, 255, 0.7); /* botón semitransparente */
+  border: none;
+  color: white;
+  padding: 7px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: rgba(0, 86, 179, 0.85);
+}
+
+hr {
+  border: none;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  margin: 15px 0;
+}
+
+.event-item {
+  background: rgba(255, 255, 255, 0.4); /* fondo más transparente */
+  border-radius: 8px;
+  padding: 12px 15px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.event-item img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin: 8px 0;
+}
+
+.event-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.event-buttons button {
+  flex: 1;
+  padding: 6px 8px;
+  font-size: 0.8rem;
+  background-color: rgba(0, 123, 255, 0.7);
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.event-buttons button:hover {
+  background-color: rgba(0, 86, 179, 0.85);
+}
+
+strong{
+  color:cornsilk;
+}

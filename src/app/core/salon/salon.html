@@ -1,0 +1,55 @@
+<p>salon works!</p>
+
+
+<div class="btn-container">
+  <button class="zzz" (click)="onAdd()">Añadir Salón</button>
+</div>
+
+
+<p style="color: white;text-align: center;font-size: 25px;">lista de Salon</p>
+
+<div class="grupo">
+  <div class="grupo-container">
+    @for(item of usuariosResource.value()?.data; track item.id){
+      <div class="grupo-card">
+        {{item.name}}<br>
+        {{item.cantidad}}<br>
+        {{item.ubicacion}}<br>
+        {{item.descripcion}}<br>
+        <img [src]="item.foto" alt="{{item.name}}"><br>
+
+        <button class="large" (click)="onEditar(item)">✏️</button>
+        <button class="large" (click)="onEliminar($event,item.id)">🗑️</button><br>
+
+        <button class="small" (click)="nuevoMantel(item.id)">añadir mantel</button>
+        <button class="small" (click)="nuevoMesa(item.id)">añadir mesa</button>
+        <button class="small" (click)="nuevoSilla(item.id)">añadir silla</button>
+      </div>
+    }
+  </div>
+</div>
+
+
+
+@if(modal()){
+<div class="modal-overlay">
+  <button (click)="onClose()">X</button>
+  @if (formVisible) {
+    <app-formsalon [data]="itemSelect()" (salir)="onClose()"> </app-formsalon>
+  }
+  @if (dialogVisible) {
+    <app-dialog texto="estas seguro de borrar" 
+    (confirm)="confirmacion($event)">  </app-dialog> 
+  }
+
+  @if (formMantel) {
+    <app-form-mantel [idsalonxdxd]="idselect()" (salir)="onClose()"> </app-form-mantel>
+  }
+  @if (formSilla) {
+    <app-form-sillas [idsalonxdxd]="idselect()" (salir)="onClose()"> </app-form-sillas>
+  }
+  @if (formMesa) {
+    <app-form-mesas [idsalonxdxd]="idselect()" (salir)="onClose()"> </app-form-mesas>
+  }
+</div>
+}
